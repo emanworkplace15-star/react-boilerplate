@@ -1,0 +1,15 @@
+services:
+  react_app:
+    image: react_boilerplate:latest
+    container_name: react_boilerplate
+    restart: always
+    networks:
+      - webproxy
+    expose:
+      - "3000"
+    environment:
+      - NODE_ENV=production
+
+networks:
+  webproxy:
+    external: true  
